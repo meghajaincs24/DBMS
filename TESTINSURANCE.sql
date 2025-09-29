@@ -79,3 +79,13 @@ select * from owns;
 select * from participated;
 select accident_date, location
 from ACCIDENT;
+select * from car order by year;
+select count(report_num) CNT from car c, participated p where c.reg_num=p.reg_num and model="Lancer";
+select count(distinct driver_id) CNT from participated a, accident b ,car c where a.report_num=
+b.report_num and b.accident_date like "%08" AND C.MODEL="LANCER";
+select * from participated order by damage_amount desc;
+SELECT AVG(DAMAGE_AMOUNT) FROM PARTICIPATED;
+DELETE FROM Participated;
+SELECT NAME FROM PERSON A, PARTICIPATED B WHERE A.DRIVER_ID = B.DRIVER_ID
+AND DAMAGE_AMOUNT>(SELECT AVG(DAMAGE_AMOUNT) FROM PARTICIPATED);
+SELECT MAX(DAMAGE_AMOUNT) FROM PARTICIPATED;
